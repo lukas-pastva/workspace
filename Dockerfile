@@ -34,9 +34,6 @@ RUN cd /usr/local/bin && curl -LJO https://github.com/Versent/saml2aws/releases/
 #aws cli
 RUN pip3 install awscli
 
-# Unzip the binary and move it to a location in the PATH
-RUN unzip saml2aws.zip && rm saml2aws.zip && mv
-
 COPY entrypoint.sh /usr/local/bin
 RUN chmod -R +x /usr/local/bin
 
