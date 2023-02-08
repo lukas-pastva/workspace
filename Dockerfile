@@ -9,13 +9,15 @@ RUN apt-get update -qq && \
     cron \
     curl \
     docker.io \
+    git \
     jq \
-    vim \
     libzip-dev \
+    mc \
     procps \
     python3 \
     python3-pip \
     unzip \
+    vim \
     zip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
