@@ -13,12 +13,21 @@ RUN apt-get update -qq && \
     vim \
     libzip-dev \
     procps \
+    python3 \
+    python3-pip \
     unzip \
     zip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+# yq
 RUN curl -L https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -o /usr/local/bin/yq
+
+#k9s
+RUN curl -LJO https://github.com/derailed/k9s/releases/download/v0.27.2/k9s_Linux_amd64.tar.gz && tar -xf k9s_Linux_amd64.tar.gz && chmod +x k9s && rm k9s_Linux_amd64.tar.gz
+
+#aws cli
+RUN pip3 install awscli
 
 COPY entrypoint.sh /usr/local/bin
 RUN chmod -R +x /usr/local/bin
