@@ -20,8 +20,9 @@ RUN apt-get update -qq && \
 
 RUN curl -L https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -o /usr/local/bin/yq
 
+COPY entrypoint.sh /usr/local/bin
 RUN chmod -R +x /usr/local/bin
 
 USER root
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
