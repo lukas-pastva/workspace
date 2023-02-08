@@ -26,10 +26,16 @@ RUN apt-get update -qq && \
 RUN curl -L https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -o /usr/local/bin/yq
 
 #k9s
-RUN curl -LJO https://github.com/derailed/k9s/releases/download/v0.27.2/k9s_Linux_amd64.tar.gz && tar -xf k9s_Linux_amd64.tar.gz && chmod +x k9s && rm k9s_Linux_amd64.tar.gz
+RUN cd /usr/local/bin && curl -LJO https://github.com/derailed/k9s/releases/download/v0.27.2/k9s_Linux_amd64.tar.gz && tar -xf k9s_Linux_amd64.tar.gz && chmod +x k9s && rm k9s_Linux_amd64.tar.gz
+
+#saml2aws
+RUN cd /usr/local/bin && curl -LJO https://github.com/Versent/saml2aws/releases/download/v2.36.2/saml2aws_2.36.2_linux_amd64.tar.gz && tar -xf saml2aws_2.36.2_linux_amd64.tar.gz && chmod +x saml2aws && rm saml2aws_2.36.2_linux_amd64.tar.gz
 
 #aws cli
 RUN pip3 install awscli
+
+# Unzip the binary and move it to a location in the PATH
+RUN unzip saml2aws.zip && rm saml2aws.zip && mv
 
 COPY entrypoint.sh /usr/local/bin
 RUN chmod -R +x /usr/local/bin
