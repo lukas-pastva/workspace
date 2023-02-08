@@ -20,7 +20,7 @@ jobs:
         run: |
           VERSION=$(git describe | awk -F '-' '{print $1}')
           docker login registry.hub.docker.com -u "${{ secrets.DOCKER_HUB_USERNAME }}" -p "${{ secrets.DOCKER_HUB_PASSWORD }}"
-          docker build -f .Dockerfile -t registry.hub.docker.com/lukaspastva/workspace:latest .
+          docker build -f Dockerfile -t registry.hub.docker.com/lukaspastva/workspace:latest .
           docker tag registry.hub.docker.com/lukaspastva/workspace:latest registry.hub.docker.com/lukaspastva/workspace:${VERSION}
           docker push registry.hub.docker.com/lukaspastva/workspace:latest
           docker push registry.hub.docker.com/lukaspastva/workspace:${VERSION}
