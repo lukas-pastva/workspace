@@ -23,7 +23,7 @@ RUN apt-get update -qq && \
     rm -rf /var/lib/apt/lists/*
 
 # yq
-RUN curl -L https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -o /usr/local/bin/yq
+RUN cd /usr/local/bin && curl -LJO https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64  && mv yq_linux_amd64 yq && chmod +x yq
 
 #k9s
 RUN cd /usr/local/bin && curl -LJO https://github.com/derailed/k9s/releases/download/v0.27.2/k9s_Linux_amd64.tar.gz && tar -xf k9s_Linux_amd64.tar.gz && chmod +x k9s && rm k9s_Linux_amd64.tar.gz
