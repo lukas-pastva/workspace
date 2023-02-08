@@ -1,6 +1,6 @@
 FROM debian:bullseye-slim
 
-WORKDIR /usr/local/bin
+WORKDIR /home
 
 RUN apt-get update -qq && \
     apt-get install -y -qq --no-install-recommends -o=Dpkg::Use-Pty=0 \
