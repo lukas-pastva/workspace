@@ -9,6 +9,8 @@ RUN apt-get update -qq && \
     cron \
     curl \
     docker.io \
+    firefox-esr \
+    font-opensans \
     git \
     jq \
     libzip-dev \
@@ -50,5 +52,7 @@ COPY entrypoint.sh /usr/local/bin
 RUN chmod -R +x /usr/local/bin
 
 USER root
+
+ENV DISPLAY=host.docker.internal:0.0
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
