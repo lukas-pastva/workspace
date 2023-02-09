@@ -10,7 +10,7 @@ RUN apt-get update -qq && \
     curl \
     docker.io \
     firefox-esr \
-    font-opensans \
+    fonts-open-sans \
     git \
     jq \
     libzip-dev \
