@@ -19,6 +19,7 @@ RUN apt-get update -qq && \
     libcups2-dev \
     libxkbcommon-x11-0 \
     libxcomposite-dev \
+    libxshmfence-dev \
     libxrandr2 \
     libgbm-dev \
     libgtk-3-0 \
