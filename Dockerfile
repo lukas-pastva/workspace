@@ -12,8 +12,7 @@ RUN apt-get update -qq && \
     git \
     jq \
     libzip-dev \
-    libappindicator-gtk3 \
-    liberation-fonts \
+    libappindicator-dev \
     mc \
     procps \
     python3 \
