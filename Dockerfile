@@ -8,6 +8,7 @@ RUN apt-get update -qq && \
     ca-certificates \
     cron \
     curl \
+    chromium \
     docker.io \
     firefox-esr \
     fonts-open-sans \
