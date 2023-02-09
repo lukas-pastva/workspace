@@ -29,6 +29,7 @@ RUN apt-get update -qq && \
     python3-pip \
     unzip \
     vim \
+    x11-apps \
     zip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
