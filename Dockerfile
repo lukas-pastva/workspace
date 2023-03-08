@@ -37,14 +37,17 @@ RUN apt-get update -qq && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+# kafka
+RUN cd /usr/local/bin && curl -JLO https://downloads.apache.org/kafka/3.4.0/kafka-3.4.0-src.tgz && tar -xf kafka-3.4.0-src.tgz && rm kafka-3.4.0-src.tgz
+
 # yq
-RUN cd /usr/local/bin && curl -LJO https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 && mv yq_linux_amd64 yq && chmod +x yq
+RUN cd /usr/local/bin && curl -JLO https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 && mv yq_linux_amd64 yq && chmod +x yq
 
 #k9s
-RUN cd /usr/local/bin && curl -LJO https://github.com/derailed/k9s/releases/download/v0.27.2/k9s_Linux_amd64.tar.gz && tar -xf k9s_Linux_amd64.tar.gz && chmod +x k9s && rm k9s_Linux_amd64.tar.gz
+RUN cd /usr/local/bin && curl -JLO https://github.com/derailed/k9s/releases/download/v0.27.2/k9s_Linux_amd64.tar.gz && tar -xf k9s_Linux_amd64.tar.gz && chmod +x k9s && rm k9s_Linux_amd64.tar.gz
 
 #saml2aws
-RUN cd /usr/local/bin && curl -LJO https://github.com/Versent/saml2aws/releases/download/v2.36.2/saml2aws_2.36.2_linux_amd64.tar.gz && tar -xf saml2aws_2.36.2_linux_amd64.tar.gz && chmod +x saml2aws && rm saml2aws_2.36.2_linux_amd64.tar.gz
+RUN cd /usr/local/bin && curl -JLO https://github.com/Versent/saml2aws/releases/download/v2.36.2/saml2aws_2.36.2_linux_amd64.tar.gz && tar -xf saml2aws_2.36.2_linux_amd64.tar.gz && chmod +x saml2aws && rm saml2aws_2.36.2_linux_amd64.tar.gz
 
 #aws cli
 RUN pip3 install awscli
