@@ -26,6 +26,7 @@ RUN apt-get update -qq && \
     libgbm-dev \
     libgtk-3-0 \
     mc \
+    openjdk-11-jre-headless \
     procps \
     python3 \
     python3-pip \
@@ -39,7 +40,7 @@ RUN apt-get update -qq && \
     #firefox-esr \
 
 # kafka
-RUN cd /usr/local/bin && curl -JLO https://downloads.apache.org/kafka/3.4.0/kafka-3.4.0-src.tgz && tar -xf kafka-3.4.0-src.tgz && rm kafka-3.4.0-src.tgz
+RUN curl -JLO https://downloads.apache.org/kafka/3.4.0/kafka_2.12-3.4.0.tgz && tar -xf kafka_2.12-3.4.0.tgz && rm kafka_2.12-3.4.0.tgz && mv kafka_2.12-3.4.0 kafka && chmod +x kafka/bin/* && mv kafka /usr/local/bin
 
 # yq
 RUN cd /usr/local/bin && curl -JLO https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 && mv yq_linux_amd64 yq && chmod +x yq
