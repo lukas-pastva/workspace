@@ -10,7 +10,6 @@ RUN apt-get update -qq && \
     curl \
     chromium \
     docker.io \
-    firefox-esr \
     fonts-open-sans \
     git \
     jq \
@@ -36,6 +35,8 @@ RUN apt-get update -qq && \
     zip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
+    #firefox-esr \
 
 # kafka
 RUN cd /usr/local/bin && curl -JLO https://downloads.apache.org/kafka/3.4.0/kafka-3.4.0-src.tgz && tar -xf kafka-3.4.0-src.tgz && rm kafka-3.4.0-src.tgz
