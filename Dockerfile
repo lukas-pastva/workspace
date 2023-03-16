@@ -27,6 +27,7 @@ RUN apt-get update -qq && \
     libgtk-3-0 \
     mc \
     openjdk-11-jre-headless \
+    openssh-client \
     procps \
     python3 \
     python3-pip \
