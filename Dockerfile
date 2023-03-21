@@ -55,6 +55,9 @@ RUN cd /usr/local/bin && curl -JLO https://github.com/Versent/saml2aws/releases/
 #aws cli
 RUN pip3 install awscli requests
 
+# direnv
+RUN curl -sfL https://direnv.net/install.sh | bash
+
 COPY entrypoint.sh /usr/local/bin
 RUN chmod -R +x /usr/local/bin
 
