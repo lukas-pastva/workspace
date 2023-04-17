@@ -53,7 +53,7 @@ RUN cd /usr/local/bin && curl -JLO https://github.com/derailed/k9s/releases/down
 RUN cd /usr/local/bin && curl -JLO https://github.com/Versent/saml2aws/releases/download/v2.36.2/saml2aws_2.36.2_linux_amd64.tar.gz && tar -xf saml2aws_2.36.2_linux_amd64.tar.gz && chmod +x saml2aws && rm saml2aws_2.36.2_linux_amd64.tar.gz
 
 #aws cli
-RUN pip3 install awscli requests boto3 argparse
+RUN pip3 install awscli requests boto3 argparse config
 
 # direnv
 RUN curl -sfL https://direnv.net/install.sh | bash
