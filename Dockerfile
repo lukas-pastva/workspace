@@ -27,7 +27,7 @@ RUN apt-get update -qq && \
     libgbm-dev \
     libgtk-3-0 \
     mc \
-    openjdk-11 \
+    openjdk-11-jdk \
     openssh-client \
     procps \
     python3 \
