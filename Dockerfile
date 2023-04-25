@@ -6,6 +6,7 @@ RUN apt-get update -qq && \
     apt-get install -y -qq --no-install-recommends -o=Dpkg::Use-Pty=0 \
     apt-transport-https \
     ca-certificates \
+    ca-certificates-java \
     cron \
     curl \
     chromium \
