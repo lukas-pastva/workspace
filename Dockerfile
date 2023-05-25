@@ -27,6 +27,7 @@ RUN apt-get update -qq && \
     libgbm-dev \
     libgtk-3-0 \
     mc \
+    nano \
     openjdk-11-jdk \
     openssh-client \
     procps \
