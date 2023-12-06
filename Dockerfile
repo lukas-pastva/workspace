@@ -43,7 +43,7 @@ RUN apt-get update -qq && \
     #firefox-esr \
 
 # kafka
-RUN curl -JLO https://downloads.apache.org/kafka/3.4.0/kafka_2.12-3.4.0.tgz && tar -xf kafka_2.12-3.4.0.tgz && rm kafka_2.12-3.4.0.tgz && mv kafka_2.12-3.4.0 kafka && chmod +x kafka/bin/* && mv kafka /usr/local/bin
+RUN curl -JLO https://downloads.apache.org/kafka/3.6.1/kafka_2.12-3.6.1.tgz && tar -xf kafka_2.12-3.6.1.tgz && rm kafka_2.12-3.6.1.tgz && mv kafka_2.12-3.6.1 kafka && chmod +x kafka/bin/* && mv kafka /usr/local/bin
 
 # yq
 RUN cd /usr/local/bin && curl -JLO https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 && mv yq_linux_amd64 yq && chmod +x yq
