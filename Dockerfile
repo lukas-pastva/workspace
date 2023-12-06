@@ -60,6 +60,10 @@ RUN pip3 install awscli requests boto3 argparse config
 # direnv
 RUN curl -sfL https://direnv.net/install.sh | bash
 
+# kubectl
+RUN curl -o /usr/local/bin/kubectl -JLO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" && \
+    chmod +x /usr/local/bin/kubectl
+
 COPY entrypoint.sh /usr/local/bin
 RUN chmod -R +x /usr/local/bin
 
