@@ -124,8 +124,7 @@ function Start-UniversalApps {
                 return [PSCustomObject]@{
                     DisplayName = 'Opera'
                     ProcessName = 'opera'
-                    # Adjust the executable path based on your Opera installation
-                    ExePath     = 'C:\Program Files\Opera\launcher.exe'
+                    ExePath     = 'c:\Users\info\AppData\Local\programs\Opera\opera.exe'
                 }
             }
             default {
