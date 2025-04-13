@@ -1,7 +1,7 @@
 <#
 .SYNOPSIS
     A universal script that defines 'Start-UniversalApps' for:
-    - Browser (Edge, Chrome, Firefox, Brave) + Tabs
+    - Browser (Edge, Chrome, Firefox, Brave, PaleMoon, Vivaldi, Opera) + Tabs
     - (Optional) Microsoft Teams
     - (Optional) Outlook
 
@@ -23,7 +23,7 @@ function Start-UniversalApps {
         # Browser / Tabs
         # ------------------------------------------------------
         [Parameter(Mandatory=$false)]
-        [ValidateSet("Edge","Chrome","Firefox","Brave")]
+        [ValidateSet("Edge","Chrome","Firefox","Brave","PaleMoon","Vivaldi","Opera")]
         [string]$BrowserName = "Edge",
 
         [Parameter(Mandatory=$false)]
@@ -105,8 +105,31 @@ function Start-UniversalApps {
                     ExePath     = 'brave.exe'
                 }
             }
+            'palemoon' {
+                return [PSCustomObject]@{
+                    DisplayName = 'Pale Moon'
+                    ProcessName = 'palemoon'
+                    ExePath     = 'C:\Program Files\Pale Moon\palemoon.exe'
+                }
+            }
+            'vivaldi' {
+                return [PSCustomObject]@{
+                    DisplayName = 'Vivaldi'
+                    ProcessName = 'vivaldi'
+                    # Adjust if your path is different
+                    ExePath     = 'C:\Users\info\AppData\Local\Vivaldi\Application\vivaldi.exe'
+                }
+            }
+            'opera' {
+                return [PSCustomObject]@{
+                    DisplayName = 'Opera'
+                    ProcessName = 'opera'
+                    # Adjust the executable path based on your Opera installation
+                    ExePath     = 'C:\Program Files\Opera\launcher.exe'
+                }
+            }
             default {
-                Write-Warning "Browser '$BrowserName' not recognized. Using 'Chrome'."
+                Write-Warning "Browser '$BrowserName' not recognized. Using 'Chrome' by default."
                 return [PSCustomObject]@{
                     DisplayName = 'Chrome'
                     ProcessName = 'chrome'
